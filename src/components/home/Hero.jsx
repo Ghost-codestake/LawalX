@@ -136,7 +136,7 @@ export default function Hero() {
             </motion.div>
 
             <motion.div variants={staggerItem} className="mt-14 flex gap-11">
-              <StatCounter value={30} suffix="+" label="Projects shipped" />
+              <StatCounter value={35} suffix="+" label="Projects shipped" />
               <StatCounter value={13} suffix="%" label="Client retention" />
               <StatCounter value={10} suffix="y" label="Avg. seniority" />
             </motion.div>

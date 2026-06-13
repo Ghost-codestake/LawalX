@@ -20,7 +20,7 @@ export default function ProjectsPreview() {
               </>
             }
           />
-          <Button to="/projects" variant="ghost">
+          <Button to="/our-projects" variant="ghost">
             View all projects <ArrowRight size={16} />
           </Button>
         </div>

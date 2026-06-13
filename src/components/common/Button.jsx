@@ -1,5 +1,4 @@
 import { forwardRef } from "react";
-import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { cn } from "../../utils/helpers";
 
@@ -18,47 +17,42 @@ const SIZES = {
   lg: "px-7 py-3.5 text-base",
 };
 
-const MotionLink = motion(Link);
-
 /**
- * Reusable button. Renders as a router <Link> when `to` is set,
- * an <a> when `href` is set, otherwise a <button>.
+ * Reusable button. Renders as a router <Link> when `to` is set, an <a> when
+ * `href` is set, otherwise a <button>. Hover-lift / press feedback is done in
+ * CSS (no framer-motion HOC), so refs forward cleanly to the DOM element.
  */
 const Button = forwardRef(function Button(
   { variant = "primary", size = "md", to, href, className, children, ...rest },
   ref
 ) {
   const classes = cn(
-    "inline-flex items-center justify-center gap-2 rounded-xl font-sans font-semibold transition-[box-shadow,background,color,filter] duration-300",
+    "inline-flex items-center justify-center gap-2 rounded-xl font-sans font-semibold",
+    "transition-[transform,box-shadow,background,color,filter] duration-300",
+    "hover:-translate-y-0.5 active:translate-y-0 active:scale-[0.97]",
     VARIANTS[variant],
     SIZES[size],
     className
   );
 
-  const motionProps = {
-    whileHover: { y: -3 },
-    whileTap: { scale: 0.97 },
-    transition: { type: "spring", stiffness: 400, damping: 20 },
-  };
-
   if (to) {
     return (
-      <MotionLink ref={ref} to={to} className={classes} {...motionProps} {...rest}>
+      <Link ref={ref} to={to} className={classes} {...rest}>
         {children}
-      </MotionLink>
+      </Link>
     );
   }
   if (href) {
     return (
-      <motion.a ref={ref} href={href} className={classes} {...motionProps} {...rest}>
+      <a ref={ref} href={href} className={classes} {...rest}>
         {children}
-      </motion.a>
+      </a>
     );
   }
   return (
-    <motion.button ref={ref} className={classes} {...motionProps} {...rest}>
+    <button ref={ref} className={classes} {...rest}>
       {children}
-    </motion.button>
+    </button>
   );
 });
 

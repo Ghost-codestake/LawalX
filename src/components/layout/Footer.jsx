@@ -96,7 +96,7 @@ export default function Footer() {
         {/* Bottom bar */}
         <div className="mt-12 flex flex-col items-center justify-between gap-3 border-t border-black/10 py-7 text-sm text-neutral-500 dark:border-white/10 sm:flex-row">
           <span>
-            © {new Date().getFullYear()} {SITE.name} Studio. All rights reserved.
+            © {new Date().getFullYear()} {SITE.name}. All rights reserved.
           </span>
           <span className="font-mono">Crafted with precision · Built for scale</span>
         </div>

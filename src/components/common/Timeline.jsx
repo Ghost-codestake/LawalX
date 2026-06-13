@@ -1,11 +1,7 @@
 import { motion } from "framer-motion";
 import { staggerContainer, fadeRight } from "../../utils/animations";
 
-/**
- * Reusable vertical timeline. Each item: { label, title, description }.
- * `label` is shown inside the node (a number for process steps, a year
- * for the company timeline).
- */
+
 export default function Timeline({ items = [] }) {
   return (
     <motion.div

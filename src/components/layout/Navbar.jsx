@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Menu, ArrowRight } from "lucide-react";
 import { NAV_LINKS } from "../../utils/constants";
@@ -13,6 +13,12 @@ import MobileMenu from "./MobileMenu";
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const { pathname } = useLocation();
+
+  // Close the mobile menu on any route change (link tap, back button, etc.).
+  useEffect(() => {
+    setMenuOpen(false);
+  }, [pathname]);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
@@ -52,7 +58,7 @@ export default function Navbar() {
                   end={link.path === "/"}
                   className={({ isActive }) =>
                     cn(
-                      "relative rounded-lg px-3.5 py-2 text-md font-medium transition-colors",
+                      "relative rounded-lg px-3.5 py-2 text-sm font-medium transition-colors",
                       isActive
                         ? "accent-text"
                         : "text-neutral-500 hover:text-ink-900 dark:hover:text-paper-100"
@@ -76,7 +82,7 @@ export default function Navbar() {
 
             <div className="flex items-center gap-2.5">
               <ThemeToggle />
-              <Button to="/contact-us" size="sm" className="hidden sm:inline-flex">
+              <Button to="/contact" size="sm" className="hidden sm:inline-flex">
                 Start a project <ArrowRight size={15} />
               </Button>
               <button

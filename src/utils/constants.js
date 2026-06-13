@@ -1,8 +1,9 @@
 import {
   Github,
   Linkedin,
-  Twitter,
+  Instagram,
   Mail,
+  Facebook,
   Phone,
   MapPin,
 } from "lucide-react";
@@ -11,7 +12,7 @@ export const SITE = {
   name: "LawalX",
   tagline: "Engineering digital products that move at the speed of ambition.",
   email: "hello@lawalx.com",
-  phone: "+234 817 065 2547",
+  phone: "+234 916 316 0425",
   location: "65B, Computer Village, Ikeja Along, Lagos State",
 };
 
@@ -26,13 +27,26 @@ export const NAV_LINKS = [
 ];
 
 export const SOCIALS = [
-  { label: "Twitter", icon: Twitter, href: "https://twitter.com" },
-  { label: "LinkedIn", icon: Linkedin, href: "https://linkedin.com" },
+  {
+    label: "Facebook",
+    icon: Facebook,
+    href: "https://www.facebook.com/share/18YpfnWfcV/?mibextid=wwXIfr",
+  },
+  {
+    label: "Instagram",
+    icon: Instagram,
+    href: "https://www.instagram.com/lawalx_tech?igsh=d2V6amNscDNkbm03",
+  },
   { label: "GitHub", icon: Github, href: "https://github.com" },
 ];
 
 export const CONTACT_INFO = [
-  { icon: Mail, label: "Email", value: SITE.email, href: `mailto:${SITE.email}` },
+  {
+    icon: Mail,
+    label: "Email",
+    value: SITE.email,
+    href: `mailto:${SITE.email}`,
+  },
   { icon: Phone, label: "Phone", value: SITE.phone, href: `tel:${SITE.phone}` },
   { icon: MapPin, label: "Studio", value: SITE.location, href: "#" },
 ];
@@ -60,8 +74,8 @@ export const FOOTER_COLUMNS = [
   {
     title: "Resources",
     links: [
-      { label: "Projects", path: "/projects" },
-      { label: "Case studies", path: "/projects" },
+      { label: "Projects", path: "/our-projects" },
+      { label: "Case studies", path: "/our-projects" },
       { label: "Privacy", path: "/contact-us" },
       { label: "Terms", path: "/contact-us" },
     ],
@@ -102,21 +116,65 @@ export const VALUES = [
 
 /** Company timeline (About page). */
 export const TIMELINE = [
-  { year: "2013", title: "Founded", text: "Started as a two-person studio shipping MVPs for local startups." },
-  { year: "2016", title: "First enterprise client", text: "Delivered a platform serving millions of monthly users." },
-  { year: "2019", title: "Went remote-first", text: "Assembled a distributed team of senior engineers and designers." },
-  { year: "2022", title: "AI practice launched", text: "Began building LLM-powered features and RAG pipelines." },
-  { year: "2025", title: "240+ projects", text: "Trusted by teams across 28 countries and counting." },
+  {
+    year: "2019",
+    title: "Founded",
+    text: "Started as a two-person studio shipping MVPs for local startups.",
+  },
+  {
+    year: "2022",
+    title: "First enterprise client",
+    text: "Delivered a platform serving millions of monthly users.",
+  },
+  {
+    year: "2024",
+    title: "Went remote-first",
+    text: "Assembled a distributed team of senior engineers and designers.",
+  },
+  {
+    year: "2025",
+    title: "AI practice launched",
+    text: "Began building LLM-powered features and RAG pipelines.",
+  },
+  {
+    year: "2026",
+    title: "35+ projects",
+    text: "Trusted by teams across 8 countries and counting.",
+  },
 ];
 
 /** Process steps, reused across Home, Services and About. */
 export const PROCESS_STEPS = [
-  { title: "Discovery", description: "We dig into your goals, users and constraints to define the real problem worth solving." },
-  { title: "Strategy", description: "A clear roadmap, scope and architecture aligned to outcomes and timelines." },
-  { title: "Design", description: "Wireframes to polished, accessible UI with a reusable design system." },
-  { title: "Development", description: "Clean, tested, type-safe code shipped in tight, transparent iterations." },
-  { title: "Testing", description: "Automated and manual QA across devices, performance and security." },
-  { title: "Launch", description: "Zero-downtime deployment, monitoring and a partnership that continues." },
+  {
+    title: "Discovery",
+    description:
+      "We dig into your goals, users and constraints to define the real problem worth solving.",
+  },
+  {
+    title: "Strategy",
+    description:
+      "A clear roadmap, scope and architecture aligned to outcomes and timelines.",
+  },
+  {
+    title: "Design",
+    description:
+      "Wireframes to polished, accessible UI with a reusable design system.",
+  },
+  {
+    title: "Development",
+    description:
+      "Clean, tested, type-safe code shipped in tight, transparent iterations.",
+  },
+  {
+    title: "Testing",
+    description:
+      "Automated and manual QA across devices, performance and security.",
+  },
+  {
+    title: "Launch",
+    description:
+      "Zero-downtime deployment, monitoring and a partnership that continues.",
+  },
 ];
 
 /** Technology stack badges. */
@@ -135,14 +193,12 @@ export const TECH_STACK = [
 
 /** Trusted-by marquee logos. */
 export const TRUSTED_LOGOS = [
-  "Vertex",
-  "Lumora",
-  "Northwind",
-  "Quanta",
-  "Apexly",
-  "Helios",
-  "Cobalt",
-  "Driftly",
+  "Data Palace",
+  "Learnsmart",
+  "winwithweb",
+  "Iwelabi",
+  "Fresible",
+  "GovHospital",
 ];
 
 /** FAQ (Contact page). */
@@ -176,19 +232,64 @@ export const FAQS = [
 
 /** Careers — open positions. */
 export const OPEN_POSITIONS = [
-  { title: "Senior Frontend Engineer", team: "Engineering", type: "Full-time", location: "Remote" },
-  { title: "Product Designer", team: "Design", type: "Full-time", location: "Remote" },
-  { title: "DevOps Engineer", team: "Platform", type: "Full-time", location: "Remote / SF" },
-  { title: "AI/ML Engineer", team: "AI", type: "Full-time", location: "Remote" },
-  { title: "Engineering Manager", team: "Engineering", type: "Full-time", location: "Remote / SF" },
+  {
+    title: "Senior Frontend Engineer",
+    team: "Engineering",
+    type: "Full-time",
+    location: "Remote",
+  },
+  {
+    title: "Product Designer",
+    team: "Design",
+    type: "Full-time",
+    location: "Remote",
+  },
+  {
+    title: "DevOps Engineer",
+    team: "Platform",
+    type: "Full-time",
+    location: "Remote / SF",
+  },
+  {
+    title: "AI/ML Engineer",
+    team: "AI",
+    type: "Full-time",
+    location: "Remote",
+  },
+  {
+    title: "Engineering Manager",
+    team: "Engineering",
+    type: "Full-time",
+    location: "Remote / SF",
+  },
 ];
 
 /** Careers — benefits. */
 export const BENEFITS = [
-  { title: "Remote-first", description: "Work from anywhere with flexible hours and async-friendly culture." },
-  { title: "Top-tier comp", description: "Competitive salary, equity and an annual learning budget." },
-  { title: "Real ownership", description: "Lead projects end-to-end with autonomy and senior peers." },
-  { title: "4-day focus weeks", description: "Protected deep-work time and no-meeting Wednesdays." },
-  { title: "Health & wellness", description: "Comprehensive medical, dental and a monthly wellness stipend." },
-  { title: "Generous time off", description: "Unlimited PTO with a mandatory minimum so you actually rest." },
+  {
+    title: "Remote-first",
+    description:
+      "Work from anywhere with flexible hours and async-friendly culture.",
+  },
+  {
+    title: "Top-tier comp",
+    description: "Competitive salary, equity and an annual learning budget.",
+  },
+  {
+    title: "Real ownership",
+    description: "Lead projects end-to-end with autonomy and senior peers.",
+  },
+  {
+    title: "4-day focus weeks",
+    description: "Protected deep-work time and no-meeting Wednesdays.",
+  },
+  {
+    title: "Health & wellness",
+    description:
+      "Comprehensive medical, dental and a monthly wellness stipend.",
+  },
+  {
+    title: "Generous time off",
+    description: "Unlimited PTO with a mandatory minimum so you actually rest.",
+  },
 ];

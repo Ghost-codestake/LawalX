@@ -25,8 +25,8 @@ export default function About() {
         eyebrow="Our story"
         title={
           <>
-            About LawalX – Website Designer in{" "}
-            <span className="grad-text">Lagos</span>
+            About LawalX – Technology Consulting & Development {" "}
+            <span className="grad-text">Agency</span>
           </>
         }
         subtitle="LawalX is a modern designer in Lagos and across Nigeria dedicated to helping businesses and startups establish a powerful digital presence. We blend creativity, code, and strategy to deliver websites that convert. We are one of the top 3 in web development in nigeria."
