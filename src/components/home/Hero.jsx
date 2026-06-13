@@ -130,7 +130,7 @@ export default function Hero() {
               <Button to="/contact-us" size="lg">
                 Start a project <ArrowRight size={16} />
               </Button>
-              <Button to="/projects" variant="ghost" size="lg">
+              <Button to="/our-projects" variant="ghost" size="lg">
                 View our work
               </Button>
             </motion.div>

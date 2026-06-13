@@ -24,7 +24,7 @@ export default function ProjectDetails() {
         {/* Name + first large image */}
         <Container className="max-w-5xl">
           <Link
-            to="/projects"
+            to="/our-projects"
             className="mb-8 inline-flex items-center gap-2 text-sm text-neutral-500 transition hover:accent-text"
           >
             <ArrowLeft size={16} /> Back to projects
