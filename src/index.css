@@ -1,0 +1,39 @@
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700;800&family=Manrope:wght@300;400;500;600;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-paper-100 font-sans text-ink-900 antialiased transition-colors duration-500;
+  }
+  .dark body {
+    @apply bg-ink-950 text-paper-100;
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-display font-extrabold tracking-tight;
+  }
+  ::selection {
+    @apply bg-brand-400 text-ink-950;
+  }
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 11px;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-paper-200 dark:bg-ink-900;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply rounded-full bg-brand-500/50;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-brand-500;
+  }
+}
