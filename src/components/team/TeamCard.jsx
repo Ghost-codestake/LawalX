@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Facebook, Twitter } from "lucide-react";
 import { staggerItem } from "../../utils/animations";
@@ -5,11 +6,10 @@ import ImageWithFallback from "../common/ImageWithFallback";
 
 const SOCIAL_ICONS = { twitter: Twitter, facebook: Facebook };
 
-/**
- * Team member card with a real photo (gradient fallback) and Twitter/Facebook
- * icons revealed on hover. Set `showSkills` to render the skill chips.
- */
+
 export default function TeamCard({ member, showSkills = false }) {
+  const to = `/team/${member.id}`;
+
   return (
     <motion.article
       variants={staggerItem}
@@ -17,16 +17,20 @@ export default function TeamCard({ member, showSkills = false }) {
       transition={{ type: "spring", stiffness: 300, damping: 22 }}
       className="glow-card group p-4 hover:border-brand-500/30"
     >
-      {/* Photo */}
+      {/* Photo (links to profile) */}
       <div className="relative aspect-square overflow-hidden rounded-2xl">
-        <ImageWithFallback
-          src={member.image}
-          gradient={member.gradient}
-          alt={member.name}
-          className="h-full w-full"
-          imgClassName="transition-transform duration-500 group-hover:scale-105"
-        />
-        <div className="absolute inset-0 flex items-center justify-center gap-3 bg-[#062322]/60 opacity-0 backdrop-blur-sm transition-opacity duration-300 group-hover:opacity-100">
+        <Link to={to} aria-label={`View ${member.name}'s profile`} className="block h-full w-full">
+          <ImageWithFallback
+            src={member.image}
+            gradient={member.gradient}
+            alt={member.name}
+            className="h-full w-full"
+            imgClassName="transition-transform duration-500 group-hover:scale-105"
+          />
+        </Link>
+
+        {/* Social overlay — transparent to clicks except the icons themselves */}
+        <div className="pointer-events-none absolute inset-0 flex items-center justify-center gap-3 bg-[#062322]/60 opacity-0 backdrop-blur-sm transition-opacity duration-300 group-hover:opacity-100">
           {Object.entries(member.socials).map(([key, href]) => {
             const Icon = SOCIAL_ICONS[key];
             if (!Icon) return null;
@@ -35,7 +39,7 @@ export default function TeamCard({ member, showSkills = false }) {
                 key={key}
                 href={href}
                 aria-label={`${member.name} on ${key}`}
-                className="grid h-10 w-10 place-items-center rounded-xl bg-white/15 text-white transition hover:-translate-y-1 hover:bg-brand-400 hover:text-[#062322]"
+                className="pointer-events-auto grid h-10 w-10 place-items-center rounded-xl bg-white/15 text-white transition hover:-translate-y-1 hover:bg-brand-400 hover:text-[#062322]"
               >
                 <Icon size={17} />
               </a>
@@ -45,7 +49,11 @@ export default function TeamCard({ member, showSkills = false }) {
       </div>
 
       <div className="px-2 pb-1 pt-4 text-center">
-        <h3 className="text-lg">{member.name}</h3>
+        <h3 className="text-lg">
+          <Link to={to} className="transition-colors hover:accent-text">
+            {member.name}
+          </Link>
+        </h3>
         <p className="mt-1 font-mono text-[13px] accent-text">{member.role}</p>
 
         {showSkills && (

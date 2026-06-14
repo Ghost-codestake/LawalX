@@ -1,10 +1,11 @@
 import { motion } from "framer-motion";
 import { TIMELINE } from "../utils/constants";
-import { getLeadership } from "../data/team";
 import { fadeLeft, fadeRight } from "../utils/animations";
 import PageWrapper from "../components/common/PageWrapper";
 import PageHeader from "../components/common/PageHeader";
 import SectionHeading from "../components/common/SectionHeading";
+import TeamCarousel from "../components/team/TeamCarousel";
+import {team} from "../data/team"
 import Container from "../components/common/Container";
 import Timeline from "../components/common/Timeline";
 import ValuesGrid from "../components/about/ValuesGrid";
@@ -118,7 +119,7 @@ export default function About() {
             align="center"
             className="mb-12"
           />
-          <TeamGrid members={getLeadership()} />
+          <TeamCarousel members={team} showSkills />
         </Container>
       </section>
 
