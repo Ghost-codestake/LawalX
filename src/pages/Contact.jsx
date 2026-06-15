@@ -8,7 +8,6 @@ import Container from "../components/common/Container";
 import ContactForm from "../components/contact/ContactForm";
 import ContactInfo from "../components/contact/ContactInfo";
 import FAQ from "../components/contact/FAQ";
-import CTA from "../components/home/CTA";
 
 export default function Contact() {
   return (
@@ -35,7 +34,7 @@ export default function Contact() {
             >
               <h3 className="text-2xl">Office &amp; contact</h3>
               <p className="mb-8 mt-3 max-w-md text-neutral-500 dark:text-neutral-400">
-                We're remote-first with a home base in San Francisco. Reach out
+                We're remote-first and are accessible anythime 24/7. Reach out
                 however suits you — we read every message.
               </p>
               <ContactInfo />
@@ -70,7 +69,6 @@ export default function Contact() {
         </Container>
       </section>
 
-      <CTA />
     </PageWrapper>
   );
 }

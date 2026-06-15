@@ -23,7 +23,7 @@ export default function ServicesPreview() {
               </>
             }
           />
-          <Button to="/services" variant="ghost">
+          <Button to="/our-services" variant="ghost">
             All services <ArrowRight size={16} />
           </Button>
         </div>

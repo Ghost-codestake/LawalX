@@ -84,10 +84,10 @@ export const FOOTER_COLUMNS = [
 
 /** Company-wide metrics (animated counters). */
 export const METRICS = [
-  { value: 240, suffix: "+", label: "Projects Delivered" },
-  { value: 12, suffix: "", label: "Years Experience" },
+  { value: 35, suffix: "+", label: "Projects Delivered" },
+  { value: 7, suffix: "", label: "Years Experience" },
   { value: 99, suffix: "%", label: "Client Satisfaction" },
-  { value: 28, suffix: "", label: "Countries Served" },
+  { value: 8, suffix: "", label: "Countries Served" },
 ];
 
 /** Company values (About page). */

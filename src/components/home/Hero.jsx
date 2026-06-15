@@ -113,7 +113,7 @@ export default function Hero() {
               variants={fadeUp}
               className="text-5xl leading-[1.02] sm:text-6xl lg:text-[5rem]"
             >
-              We Ceate{" "}
+              We Create{" "}
               <span className="grad-text">web solutions</span> that grows business
               
             </motion.h1>
